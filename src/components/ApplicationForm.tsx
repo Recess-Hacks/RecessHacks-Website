@@ -140,8 +140,7 @@ export default function ApplicationForm() {
                 {/* Short answer question */}
                 <div className="py-8">
                     <label className="block text-lg font-medium">
-                        Eureka is defined as “a cry of joy or satisfaction when one finds or discovers something”. Tell
-                        us about one of your “eureka” moments.
+                        If you had to pitch your project idea to a panel of animals, which animals would you pick as judges and why?
                     </label>
                     <h3 className="font-medium text-gray-500">Max 900 characters</h3>
                     <CharacterLimiter 
@@ -153,13 +152,12 @@ export default function ApplicationForm() {
                 </div>
                 <div>
                     <label className="block text-lg font-medium">
-                        Eureka is defined as “a cry of joy or satisfaction when one finds or discovers something”. Tell
-                        us about one of your “eureka” moments.
+                        What is your go to comfort food?
                     </label>
-                    <h3 className="font-medium text-gray-500">Max 900 characters</h3>
+                    <h3 className="font-medium text-gray-500">Max 400 characters</h3>
                     <CharacterLimiter 
                         defaultValue={state.payload?.get("short-answer")} 
-                        maxChars={900}
+                        maxChars={400}
                         label="Short answer" 
                         name="short-answer" 
                     />
