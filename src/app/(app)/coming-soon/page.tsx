@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Clock, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import FloatingShapes from "@/components/home/FloatingShapes";
 
 const ComingSoon = () => {
   const { toast } = useToast();
@@ -60,71 +61,74 @@ const ComingSoon = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex-grow flex flex-col items-center justify-center px-4 pt-20 bg-gradient-to-b from-orange-200 to-yellow-100">
-        <div className="max-w-4xl w-full text-center">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">
-            <span className="text-black">Coming</span> <span className="text-black">Soon</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-black mb-10 max-w-2xl mx-auto">
-            We're working hard to bring Recess Hacks 2025 to life. Stay tuned for the ultimate student hackathon experience!
-          </p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-4xl md:text-5xl font-bold text-black mb-2">{days}</div>
-              <div className="text-gray-600">Days</div>
+    <div className="relative">
+      <FloatingShapes />
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-grow flex flex-col items-center justify-center px-4 pt-20 bg-gradient-to-b from-orange-200 to-yellow-100">
+          <div className="max-w-4xl w-full text-center">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6">
+              <span className="text-black">Coming</span> <span className="text-black">Soon</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-black mb-10 max-w-2xl mx-auto">
+              We're working hard to bring Recess Hacks 2025 to life. Stay tuned for the ultimate student hackathon experience!
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">{days}</div>
+                <div className="text-gray-600">Days</div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">{hours}</div>
+                <div className="text-gray-600">Hours</div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">{minutes}</div>
+                <div className="text-gray-600">Minutes</div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">{seconds}</div>
+                <div className="text-gray-600">Seconds</div>
+              </div>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-4xl md:text-5xl font-bold text-black mb-2">{hours}</div>
-              <div className="text-gray-600">Hours</div>
+            
+            <div className="flex items-center justify-center gap-6 text-gray-700 mb-12">
+              <div className="flex items-center">
+                <Calendar className="mr-2 h-5 w-5 text-secondary" />
+                <span>August 23-24, 2025</span>
+              </div>
+              <div className="flex items-center">
+                <Clock className="mr-2 h-5 w-5 text-secondary" />
+                <span>Toronto, Canada</span>
+              </div>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-4xl md:text-5xl font-bold text-black mb-2">{minutes}</div>
-              <div className="text-gray-600">Minutes</div>
+            
+            <div className="max-w-md mx-auto mb-8">
+              <h3 className="text-xl font-semibold mb-4">Get Notified When We Launch</h3>
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-grow"
+                />
+                <Button type="submit" className="bg-orange-500 text-white hover:bg-orange-700">Notify Me</Button>
+              </form>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-4xl md:text-5xl font-bold text-black mb-2">{seconds}</div>
-              <div className="text-gray-600">Seconds</div>
+            
+            <div className="mt-8">
+              <Button onClick={() => window.location.href = "/"} className="bg-orange-500 text-white hover:bg-orange-700">
+                Back to Home
+              </Button>
             </div>
           </div>
-          
-          <div className="flex items-center justify-center gap-6 text-gray-700 mb-12">
-            <div className="flex items-center">
-              <Calendar className="mr-2 h-5 w-5 text-secondary" />
-              <span>August 23-24, 2025</span>
-            </div>
-            <div className="flex items-center">
-              <Clock className="mr-2 h-5 w-5 text-secondary" />
-              <span>Toronto, Canada</span>
-            </div>
+          <div className="container mx-auto px-4 text-center mt-28">
+            <p className="text-gray-500">
+              © {new Date().getFullYear()} Recess Hacks. All rights reserved.
+            </p>
           </div>
-          
-          <div className="max-w-md mx-auto mb-8">
-            <h3 className="text-xl font-semibold mb-4">Get Notified When We Launch</h3>
-            <form onSubmit={handleSubmit} className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-grow"
-              />
-              <Button type="submit" className="bg-orange-500 text-white hover:bg-orange-700">Notify Me</Button>
-            </form>
-          </div>
-          
-          <div className="mt-8">
-            <Button onClick={() => window.location.href = "/"} className="bg-orange-500 text-white hover:bg-orange-700">
-              Back to Home
-            </Button>
-          </div>
-        </div>
-        <div className="container mx-auto px-4 text-center mt-28">
-          <p className="text-gray-500">
-            © {new Date().getFullYear()} Recess Hacks. All rights reserved.
-          </p>
         </div>
       </div>
     </div>
