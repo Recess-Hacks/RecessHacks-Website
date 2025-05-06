@@ -112,7 +112,7 @@ import Image from "next/image";
                       rel="noopener noreferrer"
                       className="flex items-center justify-center p-8 bg-white rounded-lg shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                     >
-                      <Image
+                      <img
                         src={`/sponsors/${sponsor.logo}`}
                         alt={`${sponsor.name} logo`}
                         className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
@@ -140,7 +140,7 @@ import Image from "next/image";
                       rel="noopener noreferrer"
                       className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                     >
-                      <Image
+                      <img
                         src={`/sponsors/${sponsor.logo}`}
                         alt={`${sponsor.name} logo`}
                         className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
@@ -168,7 +168,7 @@ import Image from "next/image";
                      rel="noopener noreferrer"
                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                    >
-                     <Image
+                     <img
                         src={`/sponsors/${sponsor.logo}`}
                         alt={`${sponsor.name} logo`}
                         className="h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"

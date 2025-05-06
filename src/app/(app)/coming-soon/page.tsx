@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Clock, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import FloatingShapes from "@/components/home/FloatingShapes";
+import Navbar from '@/components/home/Navbar'
 
 const ComingSoon = () => {
   const { toast } = useToast();
@@ -62,7 +62,8 @@ const ComingSoon = () => {
   
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="flex-grow flex flex-col items-center justify-center px-4 pt-20 bg-gradient-to-b from-orange-200 to-yellow-100">
+      <Navbar />
+      <div className="flex-grow flex flex-col items-center justify-center px-4 pt-32 bg-gradient-to-b from-orange-200 to-yellow-100">
         <div className="max-w-4xl w-full text-center">
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
             <span className="text-black">Coming</span> <span className="text-black">Soon</span>
@@ -122,7 +123,7 @@ const ComingSoon = () => {
             </Button>
           </div>
         </div>
-        <div className="container mx-auto px-4 text-center mt-28">
+        <div className="container mx-auto px-4 text-center mt-16">
           <p className="text-gray-500">
             © {new Date().getFullYear()} Recess Hacks. All rights reserved.
           </p>
