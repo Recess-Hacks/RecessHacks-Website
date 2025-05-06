@@ -49,7 +49,7 @@ export const InfoEmailTemplate = ({firstName}: InfoTemplateProps) => (
                 </Text>
                 <Text style={paragraph}>
                     Registration will be open from 7:30 AM to 8:00 AM, at the front entrance of the school. Please have
-                    your <a href="https://recesshacks.org/dashboard/qrcode" target="_blank">QR code</a> ready to be
+                    your <a href="https://https://recess-hacks.onrender.com//dashboard/qrcode" target="_blank">QR code</a> ready to be
                     scanned. If you cannot make it to registration, please reach out to us through our <a
                     href="https://discord.gg/ApEmE7g7GB" target="_blank">Discord server</a> or email us at <a
                     href="mailto:recesshacks@gmail.com">recesshacks@gmail.com</a>.
@@ -117,7 +117,7 @@ export const InfoEmailTemplate = ({firstName}: InfoTemplateProps) => (
                     Hacker package
                 </Text>
                 <Text style={paragraph}>
-                    The hacker package can be accessed <a href="https://recesshacks.org/hacker-package.pdf"
+                    The hacker package can be accessed <a href="https://https://recess-hacks.onrender.com//hacker-package.pdf"
                                                           target="_blank">here</a>. It contains all the information you
                     need to know about the event, including the schedule, rules, and more! Please take a moment to
                     review it before the event.
@@ -129,7 +129,7 @@ export const InfoEmailTemplate = ({firstName}: InfoTemplateProps) => (
                 </Text>
                 <Text style={paragraph}>
                     If you haven't already, please do so <a
-                    href="https://recesshacks.org/dashboard" target="_blank">here</a>.
+                    href="https://https://recess-hacks.onrender.com//dashboard" target="_blank">here</a>.
                 </Text>
                 <br/>
                 <Hr style={hr}/>

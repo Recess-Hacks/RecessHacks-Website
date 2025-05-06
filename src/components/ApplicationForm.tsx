@@ -220,7 +220,7 @@ export default function ApplicationForm() {
                     type="url"
                     label="Portfolio"
                     name="portfolio"
-                    placeholder="https://recesshacks.org"
+                    placeholder="https://https://recess-hacks.onrender.com/"
                     defaultValue={state.payload?.get("portfolio")}
                 />
 
@@ -228,7 +228,7 @@ export default function ApplicationForm() {
                     type="url"
                     label="Link to resume"
                     name="resume"
-                    placeholder="https://recesshacks.org/resume.pdf"
+                    placeholder="https://https://recess-hacks.onrender.com//resume.pdf"
                     defaultValue={state.payload?.get("resume")}
                 />
 

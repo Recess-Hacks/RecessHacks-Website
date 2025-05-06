@@ -41,7 +41,7 @@ export const ApplicationsDueTemplate = ({firstName}: ApplicationsOpenTemplatePro
                     (including four 3D printers), and a ton of fun!
                 </Text>
                 <Section style={btnContainer}>
-                    <Button style={button} href={"https://recesshacks.org/dashboard/application"}>
+                    <Button style={button} href={"https://https://recess-hacks.onrender.com//dashboard/application"}>
                         Apply Now
                     </Button>
                 </Section>

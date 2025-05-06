@@ -63,7 +63,7 @@ export const AcceptanceEmailTemplate = ({firstName}: ApplicationsOpenTemplatePro
                     </strong>
                 </Text>
                 <Section style={btnContainer}>
-                    <Button style={button} href={"https://recesshacks.org/dashboard/"}>
+                    <Button style={button} href={"https://https://recess-hacks.onrender.com//dashboard/"}>
                         RSVP Now
                     </Button>
                 </Section>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "RecessHacks 2025",
         type: "website",
-        url: "https://recesshacks.org",
+        url: "https://https://recess-hacks.onrender.com/",
         images: [
             {
                 url: "https://i.postimg.cc/DwkDgpkj/logo.png",

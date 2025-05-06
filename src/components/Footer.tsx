@@ -56,7 +56,7 @@ export default function Footer() {
                           <Link href="/#sponsors">Sponsors</Link>
                           <Link href="/#faq">FAQ</Link>
                           <Link href="/#team">Team</Link>
-                          <a href="https://2024.recesshacks.org" rel="noreferrer" target="_blank">2024</a>
+                          <a href="https://2024.https://recess-hacks.onrender.com/" rel="noreferrer" target="_blank">2024</a>
                         </>
                     }
                 </div>
