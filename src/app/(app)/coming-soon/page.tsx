@@ -32,8 +32,9 @@ const ComingSoon = () => {
     return () => clearInterval(timer);
   }, [launchDate]);
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (!email) {
       toast({
         title: "Error",
@@ -42,7 +43,7 @@ const ComingSoon = () => {
       });
       return;
     }
-    
+  
     if (!/\S+@\S+\.\S+/.test(email)) {
       toast({
         title: "Error",
@@ -51,13 +52,16 @@ const ComingSoon = () => {
       });
       return;
     }
+  
+    else {
+      await fetch('/api/save-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
     
-    toast({
-      title: "Success!",
-      description: "You'll be notified when we launch!",
-    });
-    
-    setEmail("");
+      setEmail('');
+    }
   };
   
   return (
