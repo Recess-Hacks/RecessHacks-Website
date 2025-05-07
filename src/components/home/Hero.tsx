@@ -16,7 +16,7 @@ const Hero = () => {
   
   useEffect(() => {
     const calculateDaysLeft = () => {
-      const eventDate = new Date('2025-08-23T9:00:00');
+      const eventDate = new Date('2025-08-23T09:00:00');
       const today = new Date();
       const timeDiff = eventDate.getTime() - today.getTime();
       const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -83,7 +83,7 @@ const Hero = () => {
               </div>
             ) : (
               <div className="mb-8 py-2 px-4 rounded-lg bg-hackathon-orange/10 text-hackathon-orange font-medium">
-                Event in progress!
+                {daysLeft}
               </div>
             )}
           </ScrollReveal>

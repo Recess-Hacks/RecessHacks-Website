@@ -77,7 +77,7 @@ const Navbar = () => {
     <motion.header
       ref={ref}
       className={cn(
-        "fixed w-full z-50 transition-all duration-300 overflow-hidden", 
+        "fixed w-full z-50 transition-all duration-300", 
         isScrolled ? "py-6" : "bg-transparent py-6"
       )}
     >
@@ -85,7 +85,7 @@ const Navbar = () => {
         <NavBody visible={visible}>
           <NavbarLogo isScrolled={isScrolled} />
           <NavItems items={navItems} className="text-slate-700" />
-          <NavbarButton variant="primary" href="/coming-soon" className="overflow-hidden">
+          <NavbarButton variant="primary" href="/coming-soon" className="">
             Login
           </NavbarButton>
         </NavBody>
@@ -104,7 +104,7 @@ const Navbar = () => {
               <a 
                 key={`mobile-${idx}`}
                 href={item.link} 
-                className="w-full text-slate-700 hover:text-blue-600 py-3 text-lg"
+                className="w-full text-slate-700 hover:text-orange-600 py-2 text-base font-medium border-b border-gray-100 last:border-none transition-colors duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
@@ -195,11 +195,11 @@ const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
-        width: visible ? "90%" : "100%",
-        paddingRight: visible ? "12px" : "0px",
-        paddingLeft: visible ? "12px" : "0px",
-        borderRadius: visible ? "4px" : "2rem",
-        y: visible ? 20 : 0,
+        width: visible ? "92%" : "100%",
+        paddingRight: visible ? "16px" : "8px",
+        paddingLeft: visible ? "16px" : "8px",
+        borderRadius: visible ? "16px" : "2rem",
+        y: visible ? 16 : 0,
       }}
       transition={{
         type: "spring",
@@ -208,7 +208,7 @@ const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-white/80",
+        visible && "bg-white/90",
         className,
       )}
     >
@@ -240,11 +240,15 @@ const MobileNavMenu = ({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, height: 0, y: -20 }}
+          animate={{ opacity: 1, height: "auto", y: 0 }}
+          exit={{ opacity: 0, height: 0, y: -20 }}
+          transition={{ 
+            duration: 0.3, 
+            ease: "easeInOut" 
+          }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+            "absolute inset-x-0 top-16 z-50 flex w-[92%] mx-auto flex-col items-start justify-start gap-2 rounded-xl bg-white px-4 py-5 shadow-lg",
             className,
           )}
         >
@@ -262,10 +266,14 @@ const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  return isOpen ? (
-    <X className="text-slate-700" onClick={onClick} />
-  ) : (
-    <Menu className="text-slate-700" onClick={onClick} />
+  return (
+    <div className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" onClick={onClick}>
+      {isOpen ? (
+        <X className="text-slate-700 h-5 w-5" />
+      ) : (
+        <Menu className="text-slate-700 h-5 w-5" />
+      )}
+    </div>
   );
 };
 
