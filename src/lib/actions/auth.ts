@@ -113,7 +113,12 @@ export const loginWithEmail = async (prevState: any, formData: FormData) => {
             });
         }
 
-    } catch (error) {
+    } catch (error: any) {
+        // Check if the error is the special redirect error
+        if (error.digest?.startsWith('NEXT_REDIRECT')) {
+            throw error; // Re-throw it so Next.js can handle it
+        }
+        // Handle all other errors
         console.log(error);
         return {error: "Internal server error, please try again later"};
     }

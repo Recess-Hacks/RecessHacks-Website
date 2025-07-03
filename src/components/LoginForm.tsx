@@ -18,7 +18,8 @@ const loginWithGithub = async () => {
         throw new Error("Failed to sign up with Github");
     }
     const { url } = await res.json();
-    redirect(url);
+    // Use the browser's built-in redirection method
+    window.location.href = url;
 };
 
 const loginWithGoogle = async () => {
