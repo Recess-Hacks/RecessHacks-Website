@@ -1,8 +1,8 @@
 import { GitHub, Google } from "arctic";
 
 export const github = new GitHub(
-    process.env.SECRET_GITHUB_CLIENT_ID ?? "",
-    process.env.SECRET_GITHUB_CLIENT_SECRET ?? "",
+    process.env.GITHUB_CLIENT_ID ?? "",
+    process.env.GITHUB_CLIENT_SECRET ?? "",
     process.env.DEV === "true" ? "http://localhost:3000/login/github/callback" : "https://https://recess-hacks.onrender.com/.ca/login/github/callback"
 );
 

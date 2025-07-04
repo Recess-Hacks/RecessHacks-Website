@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json(
-      { message: 'Email saved successfully'},
+      { message: 'Email saved successfully', record: data },
       { status: 200 }
     );
   } catch (err: any) {
