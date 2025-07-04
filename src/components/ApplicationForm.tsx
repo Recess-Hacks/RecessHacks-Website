@@ -256,7 +256,7 @@ export default function ApplicationForm() {
             </div>
 
             <button
-                className="bg-secondary-600 text-gray-100 font-medium py-2 px-4 rounded-lg mt-8 hover:bg-[#815eeb] duration-200 relative"
+                className="bg-orange-500 text-gray-100 font-medium py-2 px-4 rounded-lg mt-8 hover:bg-orange-600 duration-200 relative"
                 type="submit" disabled={pending}>
                 <span className={pending ? "text-transparent" : ""}>Submit</span>
                 {pending && <Icon
