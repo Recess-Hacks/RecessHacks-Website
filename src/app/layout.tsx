@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     openGraph: {
         title: "RecessHacks 2025",
         type: "website",
-        url: "https://https://recess-hacks.onrender.com/",
+        url: "https://recesshacks.org/",
         images: [
             {
-                url: "https://i.postimg.cc/DwkDgpkj/logo.png",
+                url: "https://recesshacks.org/logo.png",
             },
         ],
         description: "RecessHacks 5.0 is our first ever inperson hackaton. We are a highschool hackathon open to all students from August 23-24. Hours of coding, mentorship & fun (+ free food!)",

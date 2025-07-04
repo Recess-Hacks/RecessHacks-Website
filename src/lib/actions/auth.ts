@@ -190,16 +190,20 @@ export const signUpWithEmail = async (prevState: any, formData: FormData) => {
         if (!emailVerificationTokenRecord) {
             return {error: "Internal server error, please try again later", payload: formData};
         }
-
-        await sendVerificationEmail({
-            emailVerificationToken: emailVerificationToken,
-            firstName: firstName,
-            email: email,
-        });
+        
+        try {
+            await sendVerificationEmail({
+                emailVerificationToken: emailVerificationToken,
+                firstName: firstName,
+                email: email,
+            });
+        } catch(e) {
+            console.log(e)
+        }
 
     } catch (error) {
         console.error(error);
-        return {error: "Internal server error, please try again later", payload: formData};
+        return {error: "Internal server error, please try again later hehe", payload: formData};
     }
     redirect(`/verify-email-prompt?id=${emailVerificationTokenRecord.id}`);
 };
@@ -285,7 +289,7 @@ const sendVerificationEmail = async ({emailVerificationToken, firstName, email}:
     const transporter = NodeMailer.createTransport({
         host: process.env.SMTP_HOST,
         port: parseInt(process.env.SMTP_PORT || "587"),
-        secure: false,
+        secure: true,
         auth: {
             user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASSWORD,
@@ -359,7 +363,7 @@ export const requestPasswordReset = async (prevState: any, formData: FormData) =
         const transporter = NodeMailer.createTransport({
             host: process.env.SMTP_HOST,
             port: parseInt(process.env.SMTP_PORT || "587"),
-            secure: false,
+            secure: true,
             auth: {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASSWORD,

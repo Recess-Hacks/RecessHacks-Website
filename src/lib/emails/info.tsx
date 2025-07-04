@@ -12,7 +12,6 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 import Link from "next/link";
-import logo1 from '../../../public/logo.png'
 
 interface InfoTemplateProps {
     firstName: string;
@@ -27,7 +26,7 @@ export const InfoEmailTemplate = ({firstName}: InfoTemplateProps) => (
         <Body style={main}>
             <Container style={container}>
                 <Img
-                    src={`${logo1}`}
+                    src={`https://recesshacks.org/logo.png`}
                     width="50"
                     height="50"
                     alt="Logo"

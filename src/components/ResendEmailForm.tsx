@@ -21,7 +21,7 @@ export function ResendEmailForm(props: { email: string, id: string }) {
             }
         </h2>
         <button
-            className="mt-2 flex justify-center bg-secondary-500 text-gray-50 font-semibold md:text-xl w-full py-4 rounded-xl hover:bg-[#947ef2] duration-200"
+            className="mt-2 flex justify-center bg-orange-400 text-gray-50 font-semibold md:text-xl w-full py-4 rounded-xl hover:bg-orange-600 duration-200"
             type="submit" disabled={pending}>
             {!pending && "Resend email"}
             {/*Absolute position, so the height doesn't get messed up. Zero width space used to maintain minimum height*/}

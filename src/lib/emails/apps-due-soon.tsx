@@ -11,7 +11,6 @@ import {
     Text,
 } from "@react-email/components";
 import * as React from "react";
-import logo1 from '../../../public/logo.png'
 
 
 interface ApplicationsOpenTemplateProps {
@@ -27,7 +26,7 @@ export const ApplicationsDueTemplate = ({firstName}: ApplicationsOpenTemplatePro
         <Body style={main}>
             <Container style={container}>
                 <Img
-                    src={`${logo1}`}
+                    src={`https://recesshacks.org/logo.png`}
                     width="50"
                     height="50"
                     alt="Logo"

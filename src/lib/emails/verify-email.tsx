@@ -11,7 +11,6 @@ import {
     Text,
 } from "@react-email/components";
 import * as React from "react";
-import logo1 from '../../../public/logo.png'
 
 interface VerifyEmailTemplateProps {
     userFirstname: string;
@@ -29,7 +28,7 @@ export const VerifyEmailTemplate = ({
         <Body style={main}>
             <Container style={container}>
                 <Img
-                    src={`${logo1}`}
+                    src={`https://recesshacks.org/logo.png`}
                     width="50"
                     height="50"
                     alt="RecessHacks logo"
@@ -92,7 +91,7 @@ const btnContainer = {
 };
 
 const button = {
-    backgroundColor: "#6d46e1",
+    backgroundColor: "#FF5C00",
     borderRadius: "3px",
     color: "#fff",
     fontSize: "16px",
