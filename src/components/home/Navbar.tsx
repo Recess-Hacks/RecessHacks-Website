@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, ReactNode, ElementType, ComponentPropsWithoutRef } from "react";
+import { useState, useRef, ReactNode, ElementType, ComponentPropsWithoutRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -50,6 +50,21 @@ const Navbar = () => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [days, setDays] = useState(0);
+    
+    // Set launch date to June 10, 2025
+    const launchDate = new Date("July 15, 2025").getTime();
+    
+    useEffect(() => {
+      const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+        
+        setDays(Math.floor(distance / (1000 * 60 * 60 * 24)));
+      }, 1000);
+      
+      return () => clearInterval(timer);
+    }, [launchDate]);
   
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 100) {
@@ -66,7 +81,7 @@ const Navbar = () => {
   const navItems = [
     { name: "About", link: "/#about" },
     { name: "Location", link: "/#location" },
-    { name: "Schedule", link: "/coming-soon" },
+    { name: "Schedule", link: days > 0 ? '/coming-soon' : '/login' },
     { name: "Stats", link: "/#stats" },
     { name: "Sponsors", link: "/#sponsors" },
     { name: "Team", link: "/#teams" },
@@ -85,7 +100,7 @@ const Navbar = () => {
         <NavBody visible={visible}>
           <NavbarLogo isScrolled={isScrolled} />
           <NavItems items={navItems} className="text-slate-700" />
-          <NavbarButton variant="primary" href="/coming-soon" className="">
+          <NavbarButton variant="primary" href={days > 0 ? '/coming-soon' : '/login'} className="">
             Login
           </NavbarButton>
         </NavBody>
@@ -112,7 +127,7 @@ const Navbar = () => {
             ))}
             <NavbarButton 
               variant="primary" 
-              href="/coming-soon" 
+              href={days > 0 ? '/coming-soon' : '/login'} 
               className="w-full mt-4"
               onClick={() => setIsMobileMenuOpen(false)}
             >

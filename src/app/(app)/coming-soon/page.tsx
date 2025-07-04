@@ -79,7 +79,7 @@ const ComingSoon = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
             <div className="bg-white p-4 rounded-lg shadow-md">
-              <div className="text-4xl md:text-5xl font-bold text-black mb-2">{days}</div>
+              <div className="text-4xl md:text-5xl font-bold text-black mb-2">{days - 1}</div>
               <div className="text-gray-600">Days</div>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-md">

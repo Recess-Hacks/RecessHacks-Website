@@ -6,6 +6,21 @@ import { ScrollReveal } from '@/components/ui/scroll-reveal';
 
 const Hero = () => {
   const [daysLeft, setDaysLeft] = useState(0);
+  const [days, setDays] = useState(0);
+  
+  // Set launch date to June 10, 2025
+  const launchDate = new Date("July 15, 2025").getTime();
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      
+      setDays(Math.floor(distance / (1000 * 60 * 60 * 24)));
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [launchDate]);
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
@@ -61,7 +76,7 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             <ScrollReveal delay={500} className="flex items-center gap-2 p-3 rounded-lg bg-[#f7f3f6] border hover:scale-105 transform-all duration-500 hover:bg-gray-100">
               <Calendar className="text-hackathon-orange" size={24} />
-              <span className="font-medium">48 Hours</span>
+              <span className="font-medium">24 Hours</span>
             </ScrollReveal>
             
             <ScrollReveal delay={650} className="flex items-center gap-2 p-3 rounded-lg bg-[#f7f3f6] border hover:scale-105 transform-all duration-500 hover:bg-gray-100">
@@ -89,7 +104,7 @@ const Hero = () => {
           </ScrollReveal>
           
           <ScrollReveal delay={1200} className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-hackathon-orange to-hackathon-yellow hover:from-hackathon-orange-dark hover:to-hackathon-yellow-dark text-white font-medium group" onClick={() => redirect('/coming-soon')}>
+            <Button size="lg" className="bg-gradient-to-r from-hackathon-orange to-hackathon-yellow hover:from-hackathon-orange-dark hover:to-hackathon-yellow-dark text-white font-medium group" onClick={() => redirect(days > 0 ? '/coming-soon' : '/login')}>
               Register Now
               <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
