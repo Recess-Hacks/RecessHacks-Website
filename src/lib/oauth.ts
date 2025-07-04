@@ -1,5 +1,7 @@
 import { GitHub, Google } from "arctic";
 
+// Changed something idk
+
 export const github = new GitHub(
     process.env.GITHUB_CLIENT_ID ?? "",
     process.env.GITHUB_CLIENT_SECRET ?? "",
