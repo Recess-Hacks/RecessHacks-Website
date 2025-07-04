@@ -34,7 +34,7 @@ export default async function UserQRCode() {
                 </div>
                 <Image
                     id="qrcode"
-                    className="mt-4 md:mt-6 lg:mt-8 [image-rendering:pixelated] p-6 md:p-8 lg:p-12 bg-orange-200 rounded-xl pointer-events-none"
+                    className="mt-4 md:mt-6 lg:mt-8 [image-rendering:pixelated] p-6 md:p-8 lg:p-12 rounded-xl pointer-events-none"
                     src={dataURL} width={38 * 10} height={38 * 10}
                     alt="qrcode"/>
                 <QrCodeControls dataURL={dataURL}/>

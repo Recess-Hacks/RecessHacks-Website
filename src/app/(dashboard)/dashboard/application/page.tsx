@@ -11,7 +11,7 @@ export default function ApplicationPage() {
     const {applicationStatus} = useDashboardCtx();
 
     return (
-        <div className="flex min-h-screen min-w-screen bg-gradient-to-b from-orange-200 to-yellow-100">
+        <div className="flex min-h-screen min-w-screen">
             <>
                 {applicationStatus?.status &&
                     <SubmittedApplication />}
